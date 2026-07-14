@@ -18,3 +18,121 @@
 @media(max-width:960px){
   .app-main{background-attachment:scroll;background-position:center top}
 }
+
+/* ===== Visual premium v3 ===== */
+:root{
+  --premium-red:#d20d21;
+  --premium-red-dark:#8d0714;
+  --premium-black:#13080a;
+  --premium-glass:rgba(255,255,255,.92);
+}
+body{background:#13080a}
+.app-layout{
+  background:
+    linear-gradient(90deg,rgba(13,4,5,.92),rgba(67,10,14,.54)),
+    url('/images/firefighter-bg.jpg') center/cover fixed no-repeat;
+}
+.sidebar{
+  background:linear-gradient(180deg,rgba(18,7,9,.97),rgba(39,6,10,.94));
+  border-right:1px solid rgba(255,255,255,.12);
+  box-shadow:18px 0 45px rgba(0,0,0,.25);
+}
+.sidebar .brand-dark{color:#fff}
+.sidebar .nav-link{color:rgba(255,255,255,.72)}
+.sidebar .nav-link svg{color:#ff394b}
+.sidebar .nav-link:hover{background:rgba(210,13,33,.2);color:#fff}
+.sidebar .nav-separator{color:rgba(255,255,255,.42)}
+.sidebar .nav-link.danger{color:#ffadb5}
+.app-main{
+  background:linear-gradient(135deg,rgba(20,7,9,.38),rgba(20,7,9,.12));
+  color:#fff;
+  min-height:100vh;
+}
+.dashboard-head,.page-head{
+  padding:22px 25px;
+  border-radius:18px;
+  background:linear-gradient(110deg,rgba(19,7,9,.78),rgba(150,8,23,.52));
+  border:1px solid rgba(255,255,255,.17);
+  box-shadow:0 20px 55px rgba(0,0,0,.25);
+  backdrop-filter:blur(12px);
+}
+.dashboard-head p,.page-head p{color:rgba(255,255,255,.72)}
+.dashboard-head h1,.page-head h1{color:#fff}
+.avatar{border:2px solid rgba(255,255,255,.7);box-shadow:0 0 0 5px rgba(210,13,33,.25)}
+.status-banner{box-shadow:0 14px 35px rgba(0,0,0,.15)}
+.metrics article,.study-card,.history-table,.admin-table,.quiz-setup,.quiz-result,.quiz-card,.plan-card,.pix-card,.admin-cards a,.question-list article{
+  background:var(--premium-glass);
+  color:#211719;
+  border:1px solid rgba(255,255,255,.72);
+  box-shadow:0 18px 42px rgba(13,4,5,.2);
+  backdrop-filter:blur(18px);
+}
+.metrics article{
+  border-top:3px solid var(--premium-red);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.metrics article:hover{transform:translateY(-4px);box-shadow:0 25px 55px rgba(13,4,5,.28)}
+.section-title h2{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.section-title .eyebrow{color:#ff5060}
+.category-grid{gap:18px}
+.study-card{
+  position:relative;
+  overflow:hidden;
+  min-height:225px;
+  border-radius:16px;
+  padding:22px;
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.study-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:5px;
+  background:linear-gradient(90deg,#8e0714,#ed1b30,#ff6b77);
+}
+.study-card::after{
+  content:"";
+  position:absolute;
+  width:150px;height:150px;
+  right:-55px;top:-55px;
+  background:radial-gradient(circle,rgba(210,13,33,.15),transparent 68%);
+}
+.study-card:hover{transform:translateY(-7px);box-shadow:0 30px 65px rgba(13,4,5,.32)}
+.study-icon{
+  position:relative;z-index:1;
+  width:64px;height:64px;
+  border-radius:16px;
+  background:linear-gradient(145deg,#ffeff1,#ffd8dd);
+  box-shadow:inset 0 0 0 1px rgba(210,13,33,.12),0 10px 22px rgba(210,13,33,.14);
+}
+.study-icon svg{width:34px;height:34px;stroke-width:1.8}
+.study-card h3{font-size:18px}.study-card p{font-size:13px;line-height:1.55}
+.study-card-foot a{width:36px;height:36px;box-shadow:0 8px 18px rgba(210,13,33,.28)}
+.history-table{border-radius:16px}
+.quiz-setup,.quiz-result,.quiz-card{border-radius:20px}
+.quiz-card{max-width:980px;margin:0 auto;padding:42px}
+.quiz-option{
+  border:1px solid #e4d9db;
+  border-radius:12px;
+  padding:16px 18px;
+  box-shadow:0 5px 14px rgba(31,8,11,.04);
+  transition:transform .14s ease,border-color .14s ease,box-shadow .14s ease;
+}
+.quiz-option:hover:not(:disabled){transform:translateX(5px);border-color:#d20d21;box-shadow:0 10px 24px rgba(210,13,33,.12)}
+.quiz-option>span{background:#f1e8e9;color:#5c4d50;border:1px solid #ded1d3}
+.quiz-option.correct>span{background:#1c9d59;color:#fff;border-color:#1c9d59}
+.quiz-option.wrong>span{background:#d20d21;color:#fff;border-color:#d20d21}
+.premium-surface{position:relative;overflow:hidden}
+.premium-surface::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:4px;
+  background:linear-gradient(90deg,#7d0611,#d20d21,#ff6c78);
+}
+@media(max-width:960px){
+  .app-layout{background-attachment:scroll}
+  .sidebar{background:rgba(18,7,9,.98)}
+}
+@media(max-width:650px){
+  .dashboard-head,.page-head{padding:18px}
+  .quiz-card{padding:22px}
+  .study-card{min-height:auto}
+}

@@ -1,0 +1,24 @@
+ATUALIZAÇÃO PREMIUM
+
+Esta versão corrige definitivamente a distribuição das respostas:
+- a alternativa correta é distribuída de forma equilibrada entre A, B, C e D;
+- as alternativas erradas são embaralhadas;
+- em cada bloco de quatro questões, cada posição correta aparece uma vez;
+- não depende mais de sorteio puro, evitando padrão repetido em B.
+
+Visual:
+- imagem do bombeiro como fundo em toda a área interna;
+- camada escura para contraste;
+- menu lateral profissional;
+- ícones vetoriais Lucide, sem emojis;
+- cartões em vidro, sombras e detalhes vermelhos;
+- tela de simulado mais próxima do mockup aprovado.
+
+PUBLICAÇÃO
+1. Substitua no GitHub os arquivos antigos pelos arquivos deste pacote.
+2. Faça commit/push.
+3. Aguarde o novo deploy automático da Vercel.
+4. Se a Vercel não iniciar, use Deployments > Redeploy sem cache.
+5. Teste em janela anônima para não carregar JavaScript antigo.
+
+Não execute SQL novamente.
