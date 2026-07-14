@@ -1,13 +1,36 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CheckCircle2, Clock3, XCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import type { Question } from "@/lib/types";
 
 function shuffled<T>(items: T[]) {
-  return [...items].sort(() => Math.random() - 0.5);
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function shuffleQuestionOptions(question: Question): Question {
+  const optionsWithOriginalIndex = question.options.map((option, originalIndex) => ({
+    option,
+    originalIndex
+  }));
+
+  const shuffledOptions = shuffled(optionsWithOriginalIndex);
+  const newCorrectAnswer = shuffledOptions.findIndex(
+    item => item.originalIndex === question.correct_answer
+  );
+
+  return {
+    ...question,
+    options: shuffledOptions.map(item => item.option),
+    correct_answer: newCorrectAnswer
+  };
 }
 
 export function QuizRunner({ questions, category }: { questions: Question[]; category: string }) {
@@ -25,8 +48,15 @@ export function QuizRunner({ questions, category }: { questions: Question[]; cat
   const finished = started && quiz.length > 0 && index >= quiz.length;
 
   function begin() {
-    setQuiz(shuffled(questions).slice(0, Math.min(count, questions.length)));
-    setIndex(0); setChosen(null); setCorrect(0); setStarted(true);
+    const selectedQuestions = shuffled(questions)
+      .slice(0, Math.min(count, questions.length))
+      .map(shuffleQuestionOptions);
+
+    setQuiz(selectedQuestions);
+    setIndex(0);
+    setChosen(null);
+    setCorrect(0);
+    setStarted(true);
   }
 
   function answer(i: number) {
