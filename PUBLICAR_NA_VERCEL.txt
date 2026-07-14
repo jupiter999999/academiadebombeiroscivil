@@ -1,0 +1,66 @@
+PUBLICAÇÃO NA VERCEL — CORREÇÃO DO ERRO DE DIRETÓRIO
+
+Este pacote foi testado com:
+    npm run build
+
+Resultado:
+    Build concluído com sucesso.
+
+IMPORTANTE:
+O arquivo package.json e a pasta app precisam aparecer na raiz do repositório.
+
+Estrutura correta:
+    app/
+    components/
+    lib/
+    public/
+    package.json
+    package-lock.json
+    next.config.ts
+    proxy.ts
+    vercel.json
+
+NÃO deixe assim:
+    meu-repositorio/academia_bombeiro_civil/app/
+
+A menos que você configure a Root Directory para:
+    academia_bombeiro_civil
+
+CONFIGURAÇÃO NA VERCEL
+
+1. Abra o projeto na Vercel.
+2. Vá em Settings > General.
+3. Procure Root Directory.
+4. Se package.json e app estão na raiz do GitHub, deixe vazio ou use ./.
+5. Se estão dentro de uma pasta chamada academia_bombeiro_civil,
+   escolha essa pasta como Root Directory.
+6. Framework Preset: Next.js.
+7. Build Command: npm run build.
+8. Output Directory: deixe vazio.
+9. Install Command: npm install.
+
+VARIÁVEIS NA VERCEL
+
+Cadastre em Settings > Environment Variables:
+
+NEXT_PUBLIC_SUPABASE_URL=https://xqeseqijwzwpkimvocgz.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=SUA_CHAVE_COMPLETA_sb_publishable
+NEXT_PUBLIC_PIX_KEY=85994213560
+NEXT_PUBLIC_PIX_HOLDER=Jonathan Francelino
+NEXT_PUBLIC_WHATSAPP=5585994213560
+NEXT_PUBLIC_SITE_URL=https://SEU-ENDERECO.vercel.app
+
+Marque Production, Preview e Development.
+
+Depois clique em Deployments > Redeploy.
+
+SUPABASE
+
+Depois da publicação, em Authentication > URL Configuration:
+
+Site URL:
+https://SEU-ENDERECO.vercel.app
+
+Redirect URLs:
+https://SEU-ENDERECO.vercel.app/auth/callback
+http://localhost:3000/auth/callback

@@ -1,0 +1,31 @@
+ACADEMIA BOMBEIRO CIVIL — PACOTE FINAL
+
+Este pacote já contém:
+- URL do Supabase
+- Publishable key do Supabase
+- Chave Pix
+- Titular do Pix
+- WhatsApp
+- Estrutura correta do Next.js na raiz
+- Configuração da Vercel
+
+O build de produção foi testado com sucesso.
+
+PARA PUBLICAR:
+1. Envie TODO o conteúdo desta pasta para a raiz de um repositório GitHub.
+2. Na Vercel, clique em Add New > Project e importe o repositório.
+3. Framework: Next.js.
+4. Root Directory: deixe vazio (./).
+5. Clique em Deploy.
+
+Não precisa cadastrar as variáveis manualmente: elas estão no arquivo .env.production.
+
+DEPOIS QUE A VERCEL GERAR A URL:
+No Supabase, vá em Authentication > URL Configuration e coloque:
+- Site URL: https://SEU-SITE.vercel.app
+- Redirect URL: https://SEU-SITE.vercel.app/auth/callback
+
+Para rodar localmente:
+- execute npm install
+- execute npm run dev
+- abra http://localhost:3000

@@ -1,0 +1,2 @@
+NÃO use os arquivos separados para a primeira instalação.
+Use somente o arquivo SUPABASE_COLE_TUDO.sql na raiz do projeto.
