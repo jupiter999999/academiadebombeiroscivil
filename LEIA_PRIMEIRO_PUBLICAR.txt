@@ -1,0 +1,17 @@
+CORREÇÃO FINAL DO CADASTRO
+
+O erro ERR_NAME_NOT_RESOLVED foi causado pela URL antiga:
+https://xqeseqijwzwpkimvocgz.supabase.co
+
+A URL correta é:
+https://xqeseqjjwzwpkimvocgz.supabase.co
+
+Este pacote já contém a URL e a chave pública corretas no código e em .env.production.
+
+PARA ATUALIZAR NA VERCEL:
+1. Substitua todos os arquivos do repositório pelos arquivos deste pacote.
+2. Faça commit e push no GitHub.
+3. A Vercel fará novo deploy automaticamente.
+4. Se não fizer, abra Deployments e clique em Redeploy.
+
+Não é necessário reconstruir o banco nem executar SQL novamente.
