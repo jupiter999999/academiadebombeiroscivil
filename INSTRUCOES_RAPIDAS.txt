@@ -1,0 +1,22 @@
+ACADEMIA BOMBEIRO CIVIL — INÍCIO MAIS FÁCIL
+
+1. No Supabase, abra API Keys.
+2. Na área "Publishable key", clique no botão de copiar.
+3. Dê dois cliques em CONFIGURAR_E_INICIAR.bat.
+4. Cole a chave completa quando o programa pedir e pressione Enter.
+5. Aguarde. O navegador abrirá automaticamente.
+
+A chave correta começa com:
+sb_publishable_
+
+NÃO use a chave que começa com:
+sb_secret_
+
+Dados já configurados:
+- Supabase URL: https://xqeseqijwzwpkimvocgz.supabase.co
+- Pix: 85994213560
+- Titular: Jonathan Francelino
+- WhatsApp: 5585994213560
+- Administrador: jonathandesouzared@gmail.com
+
+Para desligar o site local, volte à janela preta e pressione Ctrl+C.
